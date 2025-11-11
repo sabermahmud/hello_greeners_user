@@ -4,11 +4,13 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import { router } from './Router/Router.jsx'
 import Root from './Components/Pages/Root/Root.jsx'
+import AuthProvider from './FireBase_Context/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}>
-      <Root/>
+    <AuthProvider>
+      <RouterProvider router={router}>
     </RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )
